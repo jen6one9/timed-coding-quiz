@@ -5,7 +5,13 @@ var buttonquestions = [
         answer: "a"
     }
 ]
+var answers []
 var score = 0;
+//Prompt the first question after the "Click to Begin"start button is clicked.
+
+
+//for timer
+function setup () 
 
 //for loop
 for (var i = 0; i < questions.length; i++) {
