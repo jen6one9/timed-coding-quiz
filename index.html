@@ -13,43 +13,38 @@
 
 <body>
     <section>
-        <h6>Highest Score: </h6>
-      
+        <h6>Highest Score:</h6>
+
         <header>
             <h1>The Coding Quiz Challenge</h1>
             <p>You have 2 minutes to answer 10 questions. Are you ready?</p>
-         
+
         </header>
 
 
     </section>
-    <div class="quiz" id = "multiple choice">
+    <div class="quiz" id="multiple choice">
         <p id="timer">2:00</p>
-        
-
         <button id="quizStart" class="btn">Click to Begin</button>
-        </div>
-      
-        <h3> Your Score: <span id="score"></span></h3>
-    
     </div>
 
-    
+    <h3> Your Score: <span id="score"></span></h3>
 
+    </div>
+    <div>
+        <ul>
+            <li><button type="buton" class="btn-group" id="choiceA"></button></li>
+            <li><button type="buton" class="btn-group" id="choiceB"></button></li>
+            <li><button type="buton" class="btn-group" id="choiceC"></button></li>
+            <li><button type="buton" class="btn-group" id="choiceD"></button></li>
+        </ul>
+    </div>
 
-
-    <!-- <div class="btn-group" role="group" aria-label="10 questions">
-        <button type="button" class="btn btn-secondary">Question #1</button>
-        <button type="button" class="btn btn-secondary">Question #2</button>
-        <button type="button" class="btn btn-secondary">Question #3</button>
-        <button type="button" class="btn btn-secondary">Question #4</button>
-        <button type="button" class="btn btn-secondary">Question #5</button>
-        <button type="button" class="btn btn-secondary">Question #6</button>
-        <button type="button" class="btn btn-secondary">Question #7</button>
-        <button type="button" class="btn btn-secondary">Question #8</button>
-        <button type="button" class="btn btn-secondary">Question #9</button>
-        <button type="button" class="btn btn-secondary">Question #10</button>
-    </div> -->
+    <section class="quiz" id="timesUp">
+        <h2>Sorry! Time's Up!</h2>
+       <button type="button" class="btn" id="timesUp"> id="showScore">
+           
+    </section>
 
     <script src="script.js"></script>
 </body>
