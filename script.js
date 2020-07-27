@@ -13,9 +13,10 @@ var multiB = document.querySelector("#B");
 var multiC = document.querySelector("#C");
 var multiD = document.querySelector("#D");
 var score = document.querySelector("#score");
+var noMoreTime = document.querySelector("#timeranout");
 timesUp.style.display= "none";
 quiz.style.display= "none";
-// var pg1 = document.querySelector("#startQuiz");
+
 // var pg2 = document.querySelector("#multChoice");
 // var timer = document.querySelector("#timer");
 // //variables for what happens if there time runs out
@@ -112,9 +113,22 @@ function validateAnswer(){
         incorrect++
     }
     score.innerText="correct:" + correct + " incorrect:" + incorrect
-
-
+    if(currentQuestion <buttonquestions.length-1){
+        currentQuestion ++
+        displayQuiz()
+    }
+    else{
+        showResults()
+    }
 }
+function showResults(){
+    console.log("showResults");
+    timesUp.style.display= "block";
+    quiz.style.display= "none";
+    noMoreTime.innerHTML="correct:" + correct + " incorrect:" + incorrect
+}
+
+
 // //Trigger the first question after the "Click to Begin"start button is clicked.
 // var answer = "";
 // console.log(answer);
@@ -124,8 +138,11 @@ function validateAnswer(){
 // var timeInterval;
 
 startBtn.addEventListener("click", startQuiz)
+multiA.addEventListener("click",validateAnswer)
+multiB.addEventListener("click",validateAnswer)
+multiC.addEventListener("click",validateAnswer)
+multiD.addEventListener("click",validateAnswer)  
 
-   
 // //for timer countdown:
 // setInterval(function () {
 //     timerInterval = setInterval(function () {
