@@ -2,7 +2,7 @@ section {
     text-align: center;
   }
 
-quizStart {
+div {
     text-align: center;
   }
 p {
@@ -11,4 +11,11 @@ p {
 h6 {
     text-align: left;
   }
-  
+h3 {
+    text-align: center;
+  }
+
+button {
+    text-align: center;
+  }
+

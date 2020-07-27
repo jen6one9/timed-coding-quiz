@@ -17,14 +17,14 @@
 
         <header>
             <h1>The Coding Quiz Challenge</h1>
-            <p>You have 2 minutes to answer 10 questions. Are you ready?</p>
+            <p>You have 1 minute to complete 5 questions. Are you ready?</p>
 
         </header>
 
 
     </section>
     <div class="quiz" id="multiple choice">
-        <p id="timer">2:00</p>
+        <p id="timer">1:00</p>
         <button id="quizStart" class="btn">Click to Begin</button>
     </div>
 
@@ -33,19 +33,24 @@
     </div>
     <div>
         <ul>
-            <li><button type="buton" class="btn-group" id="choiceA"></button></li>
-            <li><button type="buton" class="btn-group" id="choiceB"></button></li>
-            <li><button type="buton" class="btn-group" id="choiceC"></button></li>
-            <li><button type="buton" class="btn-group" id="choiceD"></button></li>
+            <li><button type="button" class="btn-group" id="A"></button></li>
+            <li><button type="button" class="btn-group" id="B"></button></li>
+            <li><button type="button" class="btn-group" id="C"></button></li>
+            <li><button type="button" class="btn-group" id="D"></button></li>
         </ul>
     </div>
 
     <section class="quiz" id="timesUp">
-        <h2>Sorry! Time's Up!</h2>
-       <button type="button" class="btn" id="timesUp"> id="showScore">
-           
+        <h2>Sorry! Time is up!</h2>
+       
+        <input placeholder="Type your initials here" id="initials"></input>
+        <button type="button" class="initialsButton" id="timesUp" id="Submit"></button>
+
+
     </section>
 
+
+    </section>
     <script src="script.js"></script>
 </body>
 

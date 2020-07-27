@@ -4,7 +4,7 @@
 //After the declaration, the variable is empty (it has no value)
 
 //variables for the start of the quiz:
-var startBtn =document.querySelector("#click-here-to-begin");
+var startBtn = document.querySelector("#click-here-to-begin");
 var pg1 = document.querySelector("#startQuiz");
 var pg2 = document.querySelector("#multChoice");
 var timer = document.querySelector("#timer");
@@ -27,7 +27,7 @@ var multiB = document.querySelector("#choiceB");
 var multiC = document.querySelector("#choiceC");
 var multiD = document.querySelector("#choiceD");
 var finalScore = document.querySelector("finalResultsMsg");
-//quiz questions array
+//quiz questions 
 var buttonquestions = [
     {
         question1: "What is the viewport meta tag?",
@@ -37,8 +37,8 @@ var buttonquestions = [
         choiceD: "An html response",
         correct: "A"
     },
-    
- 
+
+
     {
         question2: "What does JSON stand for?",
         choiceA: "JavaScript Order Notation",
@@ -51,34 +51,73 @@ var buttonquestions = [
 
     {
         question3: "Does every HTML page begin as static content?",
-        choiceA: "No, not every HTML page begins as static content",
-        choiceB: "Yes, every HTML page begins as static content",
-        choiceC: "Sometimes, based on the content",
-        choiceD: "Sometimes, after we modify the DOM and change the static in real time.",
-        correct: "B" 
+        choiceA: "No, not every HTML page begins as static content.",
+        choiceB: "Yes, every HTML page begins as static content.",
+        choiceC: "Sometimes, based on the content.",
+        choiceD: "Sometimes, after we modify the DOM and change the static code in real time.",
+        correct: "B"
     },
 
 
-]
+    {
+        question4: "Methods that find elements in the DOM tree are called?",
+        choiceA: "variables",
+        choiceB: "queries",
+        choiceC: "elements",
+        choiceD: "none of the above",
+        correct: "B"
+    },
 
+    {
+        question5: "to transform block elements into in-line elements, we use a CSS property called?",
+        choiceA: "sidebar",
+        choiceB: "float",
+        choiceC: "layout",
+        choiceD: "all of the above",
+        correct: "B"
+    },
 
+];
 
 //Trigger the first question after the "Click to Begin"start button is clicked.
-startBtn.addEventListener("click", function(){
-    pg1.setAttribute("style","display:none")
-    console.log(pg1); 
-  });
+var answer = "";
+console.log(answer);
+var seconds = 120;
+var correct = 0;
+var currentQuestion = 0;
+var timeInterval;
+
+
+document.getElementById("quizStart").addEventListener("click", function () {
+    pg1.setAttribute("style", "display:none");
+    console.log(pg1);
+    pg2.setAttribute("style", "display:block");
+    correct = 0;
+    currentQuestion = 0;
+    countdown();
+    displayQuestion();
+});
 console.log("quizStart")
 
 
 
 
-//for timer count down
-
+//for timer countdown:
+   setInterval(function()){
+        seconds--;
+        console.log(seconds);
+        if (seconds === 0){
+            clearInterval(timerInterval);
+            pg2.setAttribute("style", "display:none");
+            console.log(pg2);
+            timesUp.setAttribute("style", "display:block");
+        }
+    }, 1000;
+}
 
 
 //for loop
-for (var i = 0; i < questions.length; i++) {
+for (var i = 0; i < bttonquestions.length; i++) {
     var response = window.buttonquestions(questions[i].prompt);
     if (response == questions[i].answer) {
         score++;
