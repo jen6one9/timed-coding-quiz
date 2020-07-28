@@ -16,12 +16,13 @@ var score = document.querySelector("#score");
 var noMoreTime = document.querySelector("#timeranout");
 timesUp.style.display = "none";
 quiz.style.display = "none";
+var highest = document.querySelector("#highestScore");
 
 // var saveUserScore = document.querySelector("#saveUserScore");
 // var initials = document.querySelector("#userInt");
 // var score = document.querySelector("#scoreResults");
 // //variables for the highest score and quiz restart
-// var pg4 = document.querySelector("#highestScore");
+
 // var restartQuiz = document.querySelector("#restartQuiz");
 // //variables for the mult choice quiz
 
@@ -89,15 +90,16 @@ function startQuiz() {
 
 timeleft = 60;
 var downloadTimer = setInterval(function () {
-    if (timeleft <=0) {
+    if (timeleft <= 0) {
         clearInterval(downloadTimer);
         document.getElementById("timer").innerHTML = "finished";
     } else {
-        document.getElementById("timer").innerHTML = timeleft + "seconds left";
-    
+        document.getElementById("timer").innerHTML = timeleft + " seconds remaining";
+
     }
     timeleft -= 1;
 }, 1000);
+
 
 
 function displayQuiz() {
@@ -130,7 +132,7 @@ function showResults() {
     console.log("showResults");
     timesUp.style.display = "block";
     quiz.style.display = "none";
-    noMoreTime.innerHTML = "correct:" + correct + " incorrect:" + incorrect
+    noMoreTime.innerHTML = "correct: " + correct + " incorrect: " + incorrect
 }
 
 
@@ -139,101 +141,10 @@ multiA.addEventListener("click", validateAnswer)
 multiB.addEventListener("click", validateAnswer)
 multiC.addEventListener("click", validateAnswer)
 multiD.addEventListener("click", validateAnswer)
+ 
 
-
-//for timer countdown:
-// setInterval(function () {
-//     timerInterval = setInterval(function () {
-//         seconds--;
-//         clock.display = seconds;
-//         console.log(seconds);
-
-//         if (seconds === 0) {
-//             clearInterval(timerInterval);
-//             pg2.setAttribute("style", "display:none");
-//             console.log(pg2);
-//             timesUp.setAttribute("style", "display:block");
-//         }
-//     }, 1000);
-//         choiceA.addEventListener("click", function(){
-//             answer = "A";
-//             console.log(answer);
-//             checkTheAnswer();
-//             currentQuestion++
-//             setTimeout (function() {displayQuestion();}, 750);
-
-//         })
-
-//         choiceB.addEventListener("click", function(){
-//             answer = "B";
-//             console.log(answer);
-//             checkTheAnswer();
-//             currentQuestion++
-//             setTimeout (function() {displayQuestion();}, 750);
-
-//         })
-
-//         choiceC.addEventListener("click", function(){
-//             answer = "B";
-//             console.log(answer);
-//             checkTheAnswer();
-//             currentQuestion++
-//             setTimeout (function() {displayQuestion();}, 750);
-
-//         })
-
-//         choiceD.addEventListener("click", function(){
-//             answer = "B";
-//             console.log(answer);
-//             checkTheAnswer();
-//             currentQuestion++
-//             setTimeout (function() {displayQuestion();}, 750);
-
-//         })
-// function displayQuestion(){
-//     console.log(quiz[currentQuestion]);
-//     quizOver();
-//     result.textContent = "";
-//     problem.textContent = quiz[currentQuestion].question;
-//     choiceA.textContent = quiz[currentQuestion].choiceA;
-//     choiceB.textContent = quiz[currentQuestion].choiceB;
-//     choiceC.textContent = quiz[currentQuestion].choiceC;
-//     choiceD.textContent = quiz[currentQuestion].choiceD;
-
-// function checkTheAnswer(){
-//     console.log(answer);
-//     if (quiz[currentQuestion].correct === answer) {
-//         result.textContent = "That's correct!";
-//         correct++;
-//         console.log(correct);
-
-//     }
-//     else{
-//         result.textContent = "That's incorrect!";
-//         seconds = seconds -5;
-//     }
-// }
-// }
-
-// function quizOver(){
-//     if(currentQuestion>quiz.length-1){
-//         clearInterval(timerInterval);
-//         pg2.setAttribute("style", "display:none");
-//         console.log(pg2);
-//         pg3.setAttribute("style", "display:none");
-//         score.textContent = correct + "/5";
-//         extraSeconds.textContent = seconds + " " + "seconds leftover";
-
-//     }
-// }
-
-//  addEventListener("click", function () {
-//     pg1.setAttribute("style", "display:none");
-    //for loop
-    // for (var i = 0; i < buttonquestions.length; i++) {
-    //     var response = window.buttonquestions(quizQuestions[i].prompt);
-    //     if (response == buttonquestions[i].answer) {
-    //         score++;
-    //         alert("Correct!");
-    //     } else {
-    //         alert("Incorrect.");
+function highScores() {
+    localStorage.setItem("highScores", JSON.stringify([]));
+    console.log(JSON.parse(localStorage.getItem("highScores")));
+    console.log(highScores);
+}
