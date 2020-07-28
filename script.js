@@ -14,29 +14,103 @@ var multiC = document.querySelector("#C");
 var multiD = document.querySelector("#D");
 var score = document.querySelector("#score");
 var noMoreTime = document.querySelector("#timeranout");
-timesUp.style.display= "none";
-quiz.style.display= "none";
+timesUp.style.display = "none";
+quiz.style.display = "none";
 
-// var pg2 = document.querySelector("#multChoice");
-// var timer = document.querySelector("#timer");
-// //variables for what happens if there time runs out
 
-// var score = document.querySelector("showScore");
-// //variables for user's score
+
+// var startQuizTmer = setInterval(function () {
+    // function countdownTimer() {
+    //     const difference = +new Date("2020-01-01") - +new Date();
+    //     let remaining = "Time's up!";
+
+    //     if (difference > 0) {
+    //       const parts = {
+    //         days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+    //         hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+    //         minutes: Math.floor((difference / 1000 / 60) % 60),
+    //         seconds: Math.floor((difference / 1000) % 60)
+    //       };
+
+    //       remaining = Object.keys(parts)
+    //         .map(part => {
+    //           if (!parts[part]) return;
+    //           return `${parts[part]} ${part}`;
+    //         })
+    //         .join(" ");
+    //     }
+
+    //     document.getElementById("countdown").innerHTML = remaining;
+    //   }
+
+//       countdownTimer();
+//       setInterval(countdownTimer, 1000);
+
+
+// const parts = {
+//     minutes: Math.floor((difference / 1000 / 60) % 60),
+//     seconds: Math.floor((difference / 1000) % 60),
+
+// };
+
+// const remaining = Object.keys(parts)
+//   .map((part) => {
+//     if (!parts[part]) return;
+//     return `${parts[part]} ${part}`;
+//   })
+//   .join(" ");
+
+//   setInterval(() => {
+//     // This is where we'd recalculate the time remaining
+//   }, 1000);
+
+
+//     if (timesUp <=0) {
+//         clearInterval(timesUp);
+//         document.getElementsById("timer").innerHTML = "Finished!";
+//     } else {
+//         document.getElementById("timer").innerHTML = "TimeRemaining"
+//     }
+//     timesUp -=1;
+// }
+
+
+// function quiz() {
+//     if (seconds < 60) {
+//         document.getElementById("quizStart").innerHTML = seconds;
+//     }
+//     if (seconds > 0) {
+//         seconds--;
+
+//     } else {
+//         clearInterval(timer);
+//         alert("Sorry. You ran out of time!")
+
+//     }
+// }
+// doocument.getElementById("quizStart").onkeypress = function () {
+//     if (!timer) {
+//         timer = window.setInterval(function () {
+//             startQuizTmer();
+//         }, 1000;
+//     }
+// }
+
+// document.getElementById("timer").innerHTML = "1:00";
+
 
 // var saveUserScore = document.querySelector("#saveUserScore");
 // var initials = document.querySelector("#userInt");
 // var score = document.querySelector("#scoreResults");
 // //variables for the highest score and quiz restart
 // var pg4 = document.querySelector("#highestScore");
-// var userinitials = document.querySelector("#initials");
 // var restartQuiz = document.querySelector("#restartQuiz");
 // //variables for the mult choice quiz
 
 // var finalScore = document.querySelector("finalResultsMsg");
 // //quiz questions
 var correct = 0;
-var incorrect = 0; 
+var incorrect = 0;
 var currentQuestion = 0;
 var buttonquestions = [
     {
@@ -79,7 +153,7 @@ var buttonquestions = [
     },
 
     {
-        question: "to transform block elements into in-line elements, we use a CSS property called?",
+        question: "To transform block elements into in-line elements, we use a CSS property called?",
         choiceA: "sidebar",
         choiceB: "float",
         choiceC: "layout",
@@ -89,61 +163,54 @@ var buttonquestions = [
 
 ];
 
-function startQuiz(){
-    startBtn.style.display="none";
-    quiz.style.display="block";
+function startQuiz() {
+    startBtn.style.display = "none";
+    quiz.style.display = "block";
     displayQuiz()
 }
 
-function displayQuiz(){
-    problem.innerHTML=buttonquestions[currentQuestion].question
-    multiA.innerText=buttonquestions[currentQuestion].choiceA
-    multiB.innerText=buttonquestions[currentQuestion].choiceB
-    multiC.innerText=buttonquestions[currentQuestion].choiceC
-    multiD.innerText=buttonquestions[currentQuestion].choiceD
+function displayQuiz() {
+    problem.innerHTML = buttonquestions[currentQuestion].question
+    multiA.innerText = buttonquestions[currentQuestion].choiceA
+    multiB.innerText = buttonquestions[currentQuestion].choiceB
+    multiC.innerText = buttonquestions[currentQuestion].choiceC
+    multiD.innerText = buttonquestions[currentQuestion].choiceD
 
 }
 
-function validateAnswer(){
+function validateAnswer() {
     var userchoice = this.getAttribute("id");
-    if(userchoice == buttonquestions[currentQuestion].correct){
+    if (userchoice == buttonquestions[currentQuestion].correct) {
         correct++
     }
-    else{
+    else {
         incorrect++
     }
-    score.innerText="correct:" + correct + " incorrect:" + incorrect
-    if(currentQuestion <buttonquestions.length-1){
-        currentQuestion ++
+    score.innerText = "correct:" + correct + " incorrect:" + incorrect
+    if (currentQuestion < buttonquestions.length - 1) {
+        currentQuestion++
         displayQuiz()
     }
-    else{
+    else {
         showResults()
     }
 }
-function showResults(){
+function showResults() {
     console.log("showResults");
-    timesUp.style.display= "block";
-    quiz.style.display= "none";
-    noMoreTime.innerHTML="correct:" + correct + " incorrect:" + incorrect
+    timesUp.style.display = "block";
+    quiz.style.display = "none";
+    noMoreTime.innerHTML = "correct:" + correct + " incorrect:" + incorrect
 }
 
 
-// //Trigger the first question after the "Click to Begin"start button is clicked.
-// var answer = "";
-// console.log(answer);
-// var seconds = 60;
-// var correct = 0;
-// var currentQuestion = 0;
-// var timeInterval;
-
 startBtn.addEventListener("click", startQuiz)
-multiA.addEventListener("click",validateAnswer)
-multiB.addEventListener("click",validateAnswer)
-multiC.addEventListener("click",validateAnswer)
-multiD.addEventListener("click",validateAnswer)  
+multiA.addEventListener("click", validateAnswer)
+multiB.addEventListener("click", validateAnswer)
+multiC.addEventListener("click", validateAnswer)
+multiD.addEventListener("click", validateAnswer)
 
-// //for timer countdown:
+
+//for timer countdown:
 // setInterval(function () {
 //     timerInterval = setInterval(function () {
 //         seconds--;
@@ -183,7 +250,7 @@ multiD.addEventListener("click",validateAnswer)
 //             setTimeout (function() {displayQuestion();}, 750);
 
 //         })
-    
+
 //         choiceD.addEventListener("click", function(){
 //             answer = "B";
 //             console.log(answer);
@@ -228,7 +295,7 @@ multiD.addEventListener("click",validateAnswer)
 
 //     }
 // }
-     
+
 //  addEventListener("click", function () {
 //     pg1.setAttribute("style", "display:none");
     //for loop

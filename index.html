@@ -20,28 +20,32 @@
             <p>You have 1 minute to complete 5 questions. Are you ready?</p>
 
         </header>
-
-
     </section>
+
+
     <div class="quiz" id="multiple choice">
         <p id="timer">1:00</p>
         <button id="quizStart" class="btn">Click to Begin</button>
     </div>
+
+    <div id="countdown"></div>
+
     <div id="quizContainer">
         <h3> Your Score: <span id="score"></span></h3>
-
+            
         <h4 id="questions"></h4>
 
-        
-            <button type="button" class="btn-group" id="A"></button>
-            <button type="button" class="btn-group" id="B"></button>
-            <button type="button" class="btn-group" id="C"></button>
-            <button type="button" class="btn-group" id="D"></button>
-        
+
+        <button type="button" class="btn-group" id="A"></button>
+        <button type="button" class="btn-group" id="B"></button>
+        <button type="button" class="btn-group" id="C"></button>
+        <button type="button" class="btn-group" id="D"></button>
+
     </div>
-   
+
+
     <section class="quiz" id="timesUp">
-        <h2 id = "timeranout"></h2>
+        <h2 id="timeranout"></h2>
 
         <input placeholder="Type your initials here" id="initials"></input>
         <button type="button" class="initialsButton" id="timesUp" id="Submit">Submit</button>
