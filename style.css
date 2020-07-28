@@ -18,3 +18,14 @@ h3 {
 button {
     text-align: center;
   }
+
+body {
+  background-color: #d8d0d5;
+  background-image: linear-gradient(teal,white, gray);;
+  background-repeat: no-repeat;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-width: 100%;
+  min-height: 100vh
+  }
+
