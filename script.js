@@ -17,88 +17,6 @@ var noMoreTime = document.querySelector("#timeranout");
 timesUp.style.display = "none";
 quiz.style.display = "none";
 
-
-
-// var startQuizTmer = setInterval(function () {
-    // function countdownTimer() {
-    //     const difference = +new Date("2020-01-01") - +new Date();
-    //     let remaining = "Time's up!";
-
-    //     if (difference > 0) {
-    //       const parts = {
-    //         days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-    //         hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-    //         minutes: Math.floor((difference / 1000 / 60) % 60),
-    //         seconds: Math.floor((difference / 1000) % 60)
-    //       };
-
-    //       remaining = Object.keys(parts)
-    //         .map(part => {
-    //           if (!parts[part]) return;
-    //           return `${parts[part]} ${part}`;
-    //         })
-    //         .join(" ");
-    //     }
-
-    //     document.getElementById("countdown").innerHTML = remaining;
-    //   }
-
-//       countdownTimer();
-//       setInterval(countdownTimer, 1000);
-
-
-// const parts = {
-//     minutes: Math.floor((difference / 1000 / 60) % 60),
-//     seconds: Math.floor((difference / 1000) % 60),
-
-// };
-
-// const remaining = Object.keys(parts)
-//   .map((part) => {
-//     if (!parts[part]) return;
-//     return `${parts[part]} ${part}`;
-//   })
-//   .join(" ");
-
-//   setInterval(() => {
-//     // This is where we'd recalculate the time remaining
-//   }, 1000);
-
-
-//     if (timesUp <=0) {
-//         clearInterval(timesUp);
-//         document.getElementsById("timer").innerHTML = "Finished!";
-//     } else {
-//         document.getElementById("timer").innerHTML = "TimeRemaining"
-//     }
-//     timesUp -=1;
-// }
-
-
-// function quiz() {
-//     if (seconds < 60) {
-//         document.getElementById("quizStart").innerHTML = seconds;
-//     }
-//     if (seconds > 0) {
-//         seconds--;
-
-//     } else {
-//         clearInterval(timer);
-//         alert("Sorry. You ran out of time!")
-
-//     }
-// }
-// doocument.getElementById("quizStart").onkeypress = function () {
-//     if (!timer) {
-//         timer = window.setInterval(function () {
-//             startQuizTmer();
-//         }, 1000;
-//     }
-// }
-
-// document.getElementById("timer").innerHTML = "1:00";
-
-
 // var saveUserScore = document.querySelector("#saveUserScore");
 // var initials = document.querySelector("#userInt");
 // var score = document.querySelector("#scoreResults");
@@ -169,6 +87,19 @@ function startQuiz() {
     displayQuiz()
 }
 
+timeleft = 60;
+var downloadTimer = setInterval(function () {
+    if (timeleft <=0) {
+        clearInterval(downloadTimer);
+        document.getElementById("timer").innerHTML = "finished";
+    } else {
+        document.getElementById("timer").innerHTML = timeleft + "seconds left";
+    
+    }
+    timeleft -= 1;
+}, 1000);
+
+
 function displayQuiz() {
     problem.innerHTML = buttonquestions[currentQuestion].question
     multiA.innerText = buttonquestions[currentQuestion].choiceA
@@ -186,7 +117,7 @@ function validateAnswer() {
     else {
         incorrect++
     }
-    score.innerText = "correct:" + correct + " incorrect:" + incorrect
+    score.innerText = "correct: " + correct + " incorrect: " + incorrect
     if (currentQuestion < buttonquestions.length - 1) {
         currentQuestion++
         displayQuiz()
