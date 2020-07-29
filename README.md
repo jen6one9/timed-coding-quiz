@@ -5,9 +5,9 @@ Timed coding quiz with multiple-choice questions.
 As a coding bootcamp student, I want to take a timed quiz on JavaScript fundamentals that stores high scores so that I can gauge my progress compared to my peers. 
 
 
-# Preview
+## Preview
 
-# Deployed Site Link
+## Deployed Site Link
 
-# Acknowledgements
+## Acknowledgements
 
