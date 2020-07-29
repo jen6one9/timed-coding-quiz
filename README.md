@@ -5,18 +5,11 @@ This app is inteded to be a simple coding quiz designed to be completed within 6
 As a coding bootcamp student, I want to take a timed quiz on JavaScript fundamentals that stores high scores so that I can gauge my progress compared to my peers. 
 
 
-<<<<<<< HEAD
 # Preview
 ![alt-text](Homework4.GIF)
-# Deployed Site Link
-
-# Acknowledgements
-I would like to thank my tutor for her guidance and support on this incredible journey.
-=======
-## Preview
 
 ## Deployed Site Link
+https://jen6one9.github.io/timed-coding-quiz/
 
 ## Acknowledgements
-
->>>>>>> 6762bd8d0a629b48493cf398819da1b687978109
+I would like to thank my tutor for her guidance and support on this incredible journey.
