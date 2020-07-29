@@ -18,17 +18,6 @@ timesUp.style.display = "none";
 quiz.style.display = "none";
 var highest = document.querySelector("#highestScore");
 
-// var saveUserScore = document.querySelector("#saveUserScore");
-// var initials = document.querySelector("#userInt");
-// var score = document.querySelector("#scoreResults");
-// //variables for the highest score and quiz restart
-
-// var restartQuiz = document.querySelector("#restartQuiz");
-// //variables for the mult choice quiz
-
-// var finalScore = document.querySelector("finalResultsMsg");
-// //quiz questions
-
 var correct = 0;
 var incorrect = 0;
 var currentQuestion = 0;

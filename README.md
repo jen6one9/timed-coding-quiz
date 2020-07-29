@@ -12,4 +12,4 @@ As a coding bootcamp student, I want to take a timed quiz on JavaScript fundamen
 https://jen6one9.github.io/timed-coding-quiz/
 
 ## Acknowledgements
-I would like to thank my tutor for her guidance and support on this incredible journey.
+I would like to thank my tutor for her guidance and the support of my cohort peers on this incredible journey.
