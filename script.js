@@ -28,6 +28,7 @@ var highest = document.querySelector("#highestScore");
 
 // var finalScore = document.querySelector("finalResultsMsg");
 // //quiz questions
+
 var correct = 0;
 var incorrect = 0;
 var currentQuestion = 0;
@@ -79,7 +80,6 @@ var buttonquestions = [
         choiceD: "all of the above",
         correct: "B"
     },
-
 ];
 
 function startQuiz() {
@@ -99,7 +99,6 @@ var downloadTimer = setInterval(function () {
     }
     timeleft -= 1;
 }, 1000);
-
 
 
 function displayQuiz() {
@@ -128,6 +127,13 @@ function validateAnswer() {
         showResults()
     }
 }
+
+startBtn.addEventListener("click", startQuiz)
+multiA.addEventListener("click", validateAnswer)
+multiB.addEventListener("click", validateAnswer)
+multiC.addEventListener("click", validateAnswer)
+multiD.addEventListener("click", validateAnswer)
+
 function showResults() {
     console.log("showResults");
     timesUp.style.display = "block";
@@ -135,13 +141,6 @@ function showResults() {
     noMoreTime.innerHTML = "correct: " + correct + " incorrect: " + incorrect
 }
 
-
-startBtn.addEventListener("click", startQuiz)
-multiA.addEventListener("click", validateAnswer)
-multiB.addEventListener("click", validateAnswer)
-multiC.addEventListener("click", validateAnswer)
-multiD.addEventListener("click", validateAnswer)
- 
 
 function highScores() {
     localStorage.setItem("highScores", JSON.stringify([]));
